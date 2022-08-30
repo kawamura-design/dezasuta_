@@ -51,8 +51,11 @@ img {
 
 .wrap div {
     width: 300px;
+    height: 300px;
     background: blue;
     margin-bottom: 10px;
+    text-align: center;
+    line-height: 300px;
 }
 
 .wrap2 {
@@ -64,8 +67,11 @@ img {
 
 .wrap2 div {
     width: 300px;
+    height: 300px;
     background: red;
     margin-bottom: 10px;
+    text-align: center;
+    line-height: 300px;
 }
 
 .wrap3 {
@@ -84,19 +90,34 @@ img {
 }
 
 .wrap3 li {
-    padding: 20px;
+    padding: 10px 20px;
 }
 
+/* 右側に線をつけ、最後の右側だけ無しにする。 */
 .wrap3 li:not(:last-child) {
     border-right: 0.5px solid gray;
 }
 
 @media screen and (max-width: 767px) {
     .wrap3 {
-        display: block; /*縦並びに上書き*/
+        display: block; /*親要素に指定して縦並びに上書き*/
     }
-    .wrap div {
-        width: 100%;
-        margin-bottom: 20px;
+    .wrap3 h1 {
+        text-align: left;
+        padding: 10px;
+    }
+    .wrap3 ul {
+        display: block; /*親要素に指定して縦並びに上書き*/
+    }
+    .wrap3 li {
+        text-align: left;
+        padding: 15px 10px;
+        border-bottom: 2.5px solid gray;
+        font-size: 18px;
+    }
+    .wrap3 li:not(:last-child) {
+        border-right: none; /* 横の線を消す */
     }
 }
+
+/* 太字にする */
