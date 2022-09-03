@@ -45,13 +45,13 @@ body {
 }
 
 h1 {
-    max-width: 960px;
-    margin: 100px 0px;
+    /* max-width: 960px; */
+    /* h1はブロック要素だからmax-widthにして幅を指定すると左に寄ってしまう？ */
+    margin: 100px auto;
     /* line-height: 200px; */
     text-align: center;
     color: darkgreen;
     font-size: 40px;
-    /* margin: 0 auto; */
 }
 
 .wrap {
@@ -61,8 +61,8 @@ h1 {
     margin: 0 auto;
 }
 
-.wrap div {
-    width: 300px;
+.wrap > div {
+    width: 31%;
     background-color: #ffffff;
 }
 
@@ -76,34 +76,12 @@ h1 {
 
 .wrap p {
     /* flex-wrap: wrap;
-    width: 300x; */
+    width: 300px; */
     padding: 10px;
     font-size: 17px;
 }
 
-.image1 {
-    width: 90.9%;
-    /* height: auto; */
-    /* background: url(../images/main_1.jpg); */
-}
-
-.image1 img {
-    width: 100%;
-}
-
-.image2 {
-    width: 90.9%;
-}
-
-.image2 img {
-    width: 100%;
-}
-
-.image3 {
-    width: 90.9%;
-}
-
-.image3 img {
+.image img {
     width: 100%;
 }
 
@@ -112,8 +90,7 @@ h1 {
         display: block; /*親要素に指定して縦並びに上書き*/
     }
 
-    .wrap div {
-        margin: 0 auto;
+    .wrap > div {
         width: 100%;
     }
     .wrap p {
