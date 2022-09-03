@@ -46,11 +46,12 @@ body {
 
 h1 {
     max-width: 960px;
-    line-height: 200px;
+    margin: 100px 0px;
+    /* line-height: 200px; */
     text-align: center;
     color: darkgreen;
     font-size: 40px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .wrap {
@@ -74,8 +75,8 @@ h1 {
 }
 
 .wrap p {
-    flex-wrap: wrap;
-    width: 300x;
+    /* flex-wrap: wrap;
+    width: 300x; */
     padding: 10px;
     font-size: 17px;
 }
