@@ -57,7 +57,11 @@ img {
     background: blue;
     margin-bottom: 10px;
     text-align: center;
-    line-height: 300px; /* これよくわからない */
+    line-height: 300px;
+    /* もしくは下記で書き換え可能 */
+    /* justify-content: center; */
+    /* display: flex; */
+    /* align-items: center; */
 }
 
 .wrap2 {

@@ -47,7 +47,7 @@ body {
 h1 {
     /* max-width: 960px; */
     /* h1はブロック要素だからmax-widthにして幅を指定すると左に寄ってしまう？ */
-    margin: 100px auto;
+    margin: 100px 0;
     /* line-height: 200px; */
     text-align: center;
     color: darkgreen;

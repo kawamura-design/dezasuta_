@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #4f260b;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif;
+    font-feature-settings: "palt";
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    /* ホバーしたときにどのくらいの時間で透過させるか */
+    transition: 0.3s;
+}
+
+a:hover {
+    /* マウスをホバーしたときに透過させる */
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    /* 画像は本来読み込んだままで取り込まれるから調整する */
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/* ヘッダー */
+body {
+    background-color: #e8d9bf;
+}
+
+.header_wrap {
+    /* 自分の好きなところに配置する */
+    position: absolute;
+    /* ★ここ2行よくわかりません。何が0なのか？ */
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* ★ここの％の計算がよくわからない。何の7％なのか？ */
+    padding: 10px 7% 0 2.8%;
+    /* はみ出さないようにpaddingを内側に */
+    box-sizing: border-box;
+}
+
+.header_wrap h1 {
+    display: flex;
+    /* ★なぜここでロゴにdisplay:flexを適用させることが必要なのか？ */
+}
+
+.pc_nav ul {
+    display: flex;
+}
+
+.pc_nav ul li {
+    width: 105px;
+    margin-left: 55px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    /* ★なぜこれをここで使用するかわからない */
+    text-align: center;
+}
+
+/* メイン */
+/* リード文 */
+.lead {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lead h2 {
+    font-size: 30px;
+    margin: 100px auto 40px;
+}
+
+.lead div {
+    font-size: 82px;
+    letter-spacing: 0.1em;
+    line-height: 1.17;
+    margin-bottom: 20px;
+}
+
+.lead p {
+    font-size: 23px;
+    font-weight: bold;
+    /* ★文字の太さはどうやって合わせればいいのか？ */
+    letter-spacing: 0.1em;
+    line-height: 1.65;
+    margin-bottom: 93px;
+}
+
+/* アバウト */
+/* ここが一番よくわからなかったです */
+.about {
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.about h2 img {
+    width: 50%;
+    /* ★コーヒー写真の高さが合いません */
+}
+
+.about h2 {
+    display: flex;
+}
+
+.about li img {
+    width: 272px;
+    margin: 56px auto 48px 79px;
+}
+
+.about h3 {
+    font-size: 44px;
+    font-weight: normal;
+    padding: 0;
+    /* タグのバリエーションが少なすぎてh3が被ってしまったため指定 */
+    margin: 0 0 23px 79px;
+    line-height: 1.38;
+    text-align: left;
+}
+
+.about p {
+    width: 410px;
+    margin-left: 79px;
+    font-size: 16px;
+    line-height: 1.625;
+}
+
+/* メニュー */
+.menu {
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.menu h2 img {
+    display: flex;
+    /* なぜこれを入れると真ん中に来るのかが不明。ブロックレベル要素だから？ */
+    margin: 78px auto 39px;
+    width: 151px;
+}
+
+.menu div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul h2 {
+    color: #d30202;
+    font-size: 38pt;
+    font-weight: normal;
+    margin: -13px 12px 9px;
+}
+
+.menu li {
+    font-size: 17px;
+    width: 300px;
+    line-height: 1.47;
+}
+
+/* ギャラリー */
+.gallery h2 img {
+    display: flex;
+    margin: 50px auto 16px;
+    width: 245px;
+}
+
+.gallery ul {
+    display: flex;
+}
+
+.gallery ul img {
+    width: 20%;
+}
+
+/* イベント */
+.event {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.event h2 img {
+    display: flex;
+    margin: 60px auto 29px;
+    width: 173px;
+}
+
+.event ul {
+    padding: 26px 159px 32px;
+    border: 3.68px solid #4f260b;
+    background-color: #fff;
+}
+
+.event li {
+    font-size: 23px;
+    padding: 11px 0;
+}
+
+.event ul li span {
+    margin-left: 46px;
+    text-decoration: underline;
+}
+
+/* アクセス */
+.access h2 img {
+    display: flex;
+    margin: 69px auto 36px;
+    width: 213px;
+}
+
+.access iframe {
+    width: 100%;
+    height: 471px;
+}
+
+/* フッター */
+/* ここも難しかったです */
+footer {
+    background-color: #fff;
+    margin: 0 auto;
+    height: 393px;
+}
+
+.footer {
+    display: flex;
+    max-width: 1000px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 0 auto;
+}
+
+.footer img {
+    height: 50px;
+    /* ★なぜwidthを使用するとDESIGN CAFEが縦長になってしまうのか？*/
+    margin-top: 74px;
+}
+
+.footer ul {
+    margin: 76px;
+}
+
+.footer ul li {
+    font-size: 20px;
+    line-height: 1.95;
+}
+
+h3 {
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 72px;
+}
+
+/* ページトップボタン */
+.pagetop {
+    position: fixed;
+    right: 308px;
+    bottom: 230px;
+    width: 125px;
+}
