@@ -56,7 +56,7 @@ body {
 .header_wrap {
     /* 自分の好きなところに配置する */
     position: absolute;
-    /* ★ここ2行よくわかりません。何が0なのか？ */
+    /* ★ここ2行よくわかりません。何が0なのか？ どこが0なのか。*/
     top: 0;
     left: 0;
 
@@ -64,15 +64,14 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* ★ここの％の計算がよくわからない。何の7％なのか？ */
+    /* 136px÷1920px=7% デザイン元データの横幅の何％かという意味 */
     padding: 10px 7% 0 2.8%;
     /* はみ出さないようにpaddingを内側に */
     box-sizing: border-box;
 }
 
 .header_wrap h1 {
-    display: flex;
-    /* ★なぜここでロゴにdisplay:flexを適用させることが必要なのか？ */
+    width: 226px;
 }
 
 .pc_nav ul {
@@ -87,8 +86,99 @@ body {
     font-size: 18px;
     font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    /* ★なぜこれをここで使用するかわからない */
     text-align: center;
+}
+
+/* スマホ版メニューを消す */
+.sp_nav,
+.sp_btn {
+    display: none;
+}
+
+/* 幅1100以下でPC版メニューを消す */
+@media screen and (max-width: 1100px) {
+    .pc_nav {
+        display: none;
+    }
+    /* ハンバーガー */
+    .sp_btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        height: 23px;
+        cursor: pointer;
+        z-index: 2;
+        /* 重なり順を指定するプロパティ */
+    }
+    .sp_btn span {
+        display: block;
+        position: relative;
+        top: 10px;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+        transition: 0.3s;
+    }
+
+    /* 疑似要素 */
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+        transition: 0.3s;
+    }
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* ハンバーガーメニュー閉じる 線3本のうち2本を活用する*/
+    .sp_btn.open span {
+        background: transparent;
+        /* 透明にして消す */
+    }
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        /* 45度回転させる */
+    }
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    /* ハンバーガーメニュー */
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+    }
+    .sp_nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .sp_nav ul li {
+        padding: 20px 0;
+        color: #fff;
+        font-size: 18px;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
+            "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    }
 }
 
 /* メイン */
@@ -99,22 +189,20 @@ body {
     text-align: center;
 }
 
-.lead h2 {
+.lead p:nth-child(1) {
     font-size: 30px;
     margin: 100px auto 40px;
 }
 
-.lead div {
+.lead p:nth-child(2) {
     font-size: 82px;
     letter-spacing: 0.1em;
     line-height: 1.17;
     margin-bottom: 20px;
 }
 
-.lead p {
+.lead p:nth-child(3) {
     font-size: 23px;
-    font-weight: bold;
-    /* ★文字の太さはどうやって合わせればいいのか？ */
     letter-spacing: 0.1em;
     line-height: 1.65;
     margin-bottom: 93px;
@@ -126,33 +214,22 @@ body {
     max-width: 1000px;
     padding: 0 10px;
     margin: 0 auto;
-}
-
-.about h2 img {
-    width: 50%;
-    /* ★コーヒー写真の高さが合いません */
-}
-
-.about h2 {
     display: flex;
 }
 
-.about li img {
+.about_text h2 {
     width: 272px;
     margin: 56px auto 48px 79px;
 }
 
-.about h3 {
+.about_text h3 {
     font-size: 44px;
     font-weight: normal;
-    padding: 0;
-    /* タグのバリエーションが少なすぎてh3が被ってしまったため指定 */
-    margin: 0 0 23px 79px;
+    margin: 0 auto 23px 79px;
     line-height: 1.38;
-    text-align: left;
 }
 
-.about p {
+.about_text p {
     width: 410px;
     margin-left: 79px;
     font-size: 16px;
@@ -166,34 +243,34 @@ body {
     margin: 0 auto;
 }
 
-.menu h2 img {
-    display: flex;
-    /* なぜこれを入れると真ん中に来るのかが不明。ブロックレベル要素だから？ */
-    margin: 78px auto 39px;
+.menu h2 {
     width: 151px;
+    margin: 78px auto 39px;
 }
 
-.menu div {
+.menu_block {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
 }
 
-.menu ul h2 {
+.menu_item h3 {
     color: #d30202;
+    text-align: left;
     font-size: 38pt;
     font-weight: normal;
+    padding: 0;
     margin: -13px 12px 9px;
 }
 
-.menu li {
+.menu_item p {
     font-size: 17px;
     width: 300px;
     line-height: 1.47;
 }
 
 /* ギャラリー */
-.gallery h2 img {
-    display: flex;
+.gallery h2 {
     margin: 50px auto 16px;
     width: 245px;
 }
@@ -202,25 +279,24 @@ body {
     display: flex;
 }
 
-.gallery ul img {
-    width: 20%;
-}
-
 /* イベント */
 .event {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.event h2 img {
-    display: flex;
+.event h2 {
     margin: 60px auto 29px;
     width: 173px;
 }
 
-.event ul {
-    padding: 26px 159px 32px;
-    border: 3.68px solid #4f260b;
+.event .event_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 40px;
+    border: 3px solid #4f260b;
     background-color: #fff;
 }
 
@@ -235,8 +311,7 @@ body {
 }
 
 /* アクセス */
-.access h2 img {
-    display: flex;
+.access h2 {
     margin: 69px auto 36px;
     width: 213px;
 }
@@ -244,28 +319,24 @@ body {
 .access iframe {
     width: 100%;
     height: 471px;
+    display: block;
 }
 
 /* フッター */
 /* ここも難しかったです */
 footer {
     background-color: #fff;
-    margin: 0 auto;
-    height: 393px;
+    height: 392px;
 }
-
 .footer {
     display: flex;
     max-width: 1000px;
-    /* justify-content: center; */
-    /* align-items: center; */
     margin: 0 auto;
 }
 
-.footer img {
-    height: 50px;
-    /* ★なぜwidthを使用するとDESIGN CAFEが縦長になってしまうのか？*/
-    margin-top: 74px;
+.footer h2 {
+    padding-top: 74px;
+    width: 226px;
 }
 
 .footer ul {
@@ -273,20 +344,25 @@ footer {
 }
 
 .footer ul li {
+    color: #000000;
     font-size: 20px;
     line-height: 1.95;
 }
 
-h3 {
+/* ★インライン要素だからブロック要素に戻して、text-align: centerでなぜ中央にくるのか */
+small {
+    color: #000000;
+    display: block;
     font-size: 16px;
-    text-align: center;
     padding-bottom: 72px;
+    text-align: center;
 }
 
 /* ページトップボタン */
+/* ★どこを見て40pxに合わせるのでしょうか。 */
 .pagetop {
     position: fixed;
-    right: 308px;
-    bottom: 230px;
+    right: 40px;
+    bottom: 40px;
     width: 125px;
 }
