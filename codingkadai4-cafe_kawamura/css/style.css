@@ -217,6 +217,10 @@ body {
     display: flex;
 }
 
+.about div > img {
+    border-radius: 0 0 80px 0;
+}
+
 .about_text h2 {
     width: 272px;
     margin: 56px auto 48px 79px;
@@ -251,7 +255,14 @@ body {
 .menu_block {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+}
+
+.menu_item {
+    width: 30%;
+}
+
+.menu_item img {
+    border-radius: 0 40px 0 0;
 }
 
 .menu_item h3 {
@@ -265,7 +276,6 @@ body {
 
 .menu_item p {
     font-size: 17px;
-    width: 300px;
     line-height: 1.47;
 }
 
@@ -294,7 +304,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 10px;
     padding: 40px;
     border: 3px solid #4f260b;
     background-color: #fff;
@@ -350,6 +360,7 @@ footer {
 }
 
 /* ★インライン要素だからブロック要素に戻して、text-align: centerでなぜ中央にくるのか */
+/* ブロック要素にtext-align: centerを使えばその中のテキストが左右中央にくる */
 small {
     color: #000000;
     display: block;
@@ -359,10 +370,10 @@ small {
 }
 
 /* ページトップボタン */
-/* ★どこを見て40pxに合わせるのでしょうか。 */
 .pagetop {
     position: fixed;
     right: 40px;
     bottom: 40px;
     width: 125px;
+    /* 適当な位置… */
 }
