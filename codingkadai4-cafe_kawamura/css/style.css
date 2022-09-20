@@ -53,12 +53,9 @@ body {
     background-color: #e8d9bf;
 }
 
-.spimg {
+/* .spimg {
     display: none !important;
-}
-.spword {
-    display: none;
-}
+} */
 
 .header_wrap {
     /* 自分の好きなところに配置する */
@@ -317,14 +314,28 @@ body {
     background-color: #fff;
 }
 
-.event li {
+.event ul li {
     font-size: 23px;
-    padding: 11px 0;
+    /* padding: 11px 0; */
+}
+.event ul li + li {
+    padding-top: 22px;
 }
 
-.event ul li span {
-    margin-left: 46px;
+.event ul li time {
+    margin-right: 46px;
+}
+
+.event ul li a {
+    display: inline-block;
+    /* ★これよくわからない */
     text-decoration: underline;
+    overflow: hidden;
+    /* paddingより外のコンテンツは切り取られる */
+    white-space: nowrap;
+    /* ★ホワイトスペースとは？nowrapは折り返しをしなくなるプロパティー値？ */
+    text-overflow: ellipsis;
+    /* 表示領域からはみ出した末尾を三点リーダーにする。white-space: nowrap;とセット */
 }
 
 /* アクセス */
@@ -399,24 +410,18 @@ small {
     .about_text h3 {
         font-size: 35px;
     }
-    .about_text p {
+    /* .about_text p {
         font-size: 13px;
-    }
+    } */
 }
 
 @media screen and (max-width: 767px) {
     .pcimg {
         display: none !important;
     }
-    .spimg {
+    /* .spimg {
         display: block !important;
-    }
-    .pcword {
-        display: none;
-    }
-    .spword {
-        display: block;
-    }
+    } */
 
     .header_wrap h1 {
         width: 187px;
@@ -448,10 +453,10 @@ small {
         border-radius: 0;
     }
 
-    .about div img,
+    /* .about div img,
     .about_text h2 {
         flex-direction: column-reverse;
-    }
+    } */
     /* これが間違っている */
 
     .about_text h2 {
@@ -490,6 +495,7 @@ small {
     }
     .menu_item p {
         margin-bottom: 58px;
+        line-height: 1.58;
     }
 
     .gallery h2 {
@@ -507,14 +513,20 @@ small {
     }
     .event_block {
         display: block;
+        /* ★なぜdisplay: block;ここにも必要なのか… */
         margin: 0 20px;
         padding: 20px 10px 13px 27px;
     }
-    .event li {
+    .event ul li {
         font-size: 16px;
         line-height: 1.25;
-        padding: 11px 0;
+        /* padding: 11px 0; */
     }
+
+    .event_block ul li a {
+        display: block;
+    }
+
     .access h2 {
         width: 124px;
         margin: 26px auto 5px;
