@@ -53,9 +53,9 @@ body {
     background-color: #e8d9bf;
 }
 
-/* .spimg {
-    display: none !important;
-} */
+.spimg {
+    display: none;
+}
 
 .header_wrap {
     /* 自分の好きなところに配置する */
@@ -225,21 +225,24 @@ body {
     border-radius: 0 0 80px 0;
 }
 
+.about_text {
+    margin-left: 79px;
+}
+
 .about_text h2 {
     width: 272px;
-    margin: 56px auto 48px 79px;
+    margin: 56px auto 48px 0;
 }
 
 .about_text h3 {
     font-size: 44px;
     font-weight: normal;
-    margin: 0 auto 23px 79px;
+    margin: 0 auto 23px 0;
     line-height: 1.38;
 }
 
 .about_text p {
     width: 410px;
-    margin-left: 79px;
     font-size: 16px;
     line-height: 1.625;
 }
@@ -407,9 +410,18 @@ small {
     .lead p:nth-child(3) {
         font-size: 18px;
     }
+
+    .about_text {
+        margin-left: 30px;
+    }
+    .about_text h2 {
+        margin: 15px auto 15px 0;
+    }
     .about_text h3 {
         font-size: 35px;
+        margin: 0 auto 12px 0;
     }
+
     /* .about_text p {
         font-size: 13px;
     } */
@@ -417,11 +429,11 @@ small {
 
 @media screen and (max-width: 767px) {
     .pcimg {
-        display: none !important;
+        display: none;
     }
-    /* .spimg {
-        display: block !important;
-    } */
+    .spimg {
+        display: block;
+    }
 
     .header_wrap h1 {
         width: 187px;
@@ -434,7 +446,8 @@ small {
     }
     .lead p:nth-child(2) {
         font-size: 38px;
-        letter-spacing: 0.02em;
+        /* letter-spacing: 0.02em; */
+        /* フォントの関係で3行になってしまうから間隔消す */
         line-height: 1.15;
         margin-bottom: 12px;
     }
@@ -459,6 +472,9 @@ small {
     } */
     /* これが間違っている */
 
+    .about_text {
+        margin-left: initial;
+    }
     .about_text h2 {
         width: 160px;
         margin: 53px auto 12px;
@@ -566,4 +582,14 @@ small {
     .sp {
         display: none;
     }
+}
+
+/* スライダー調整 */
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+    color: #fff;
 }
