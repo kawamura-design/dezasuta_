@@ -505,6 +505,9 @@ small {
     .menu_item {
         width: 100%;
     }
+    .menu_item img {
+        width: 100%;
+    }
     .menu_item h3 {
         font-size: 40px;
         margin: -13px 9px 17px;
@@ -520,6 +523,10 @@ small {
     }
 
     .gallery ul {
+        display: block;
+    }
+
+    .gallery ul li img {
         width: 100%;
     }
 
@@ -592,4 +599,25 @@ small {
 .slick-dots li button:before,
 .slick-dots li.slick-active button:before {
     color: #fff;
+}
+.slick-arrow {
+    z-index: 1000;
+}
+.slick-next {
+    top: 136px;
+    right: 420px;
+    width: 38px;
+    height: 38px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    transform: rotate(45deg);
+}
+.slick-prev {
+    top: 136px;
+    left: 420px;
+    width: 38px;
+    height: 38px;
+    border-top: 5px solid #fff;
+    border-left: 5px solid #fff;
+    transform: rotate(-45deg);
 }

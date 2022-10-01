@@ -123,6 +123,7 @@
                 <li><img class="pcimg" src="images/pc_gallary_03-100.jpg" alt="店内2"></li>
                 <li><img class="pcimg" src="images/pc_gallary_02-100.jpg" alt="CAFE"></li>
                 <li><img class="pcimg" src="images/pc_gallary_01-100.jpg" alt="コーヒー"></li>
+                <li><img class="pcimg" src="images/pc_gallary_05-100.jpg" alt="店内"></li>
                 <li><img class="spimg" src="images/mobile_gallery-100.jpg" alt="店内2">
                 </li>
             </ul>
@@ -187,8 +188,14 @@
                 dots: true,
                 // スライダーの下にスライダーの丸点をつける
                 arrows: false,
-
             });
+            $('.gallery ul').slick({
+                arrows: true,
+                // これなくても矢印出るのはなぜか。
+                speed: 1000,
+                slidesToScroll: 1,
+                variableWidth: true,
+            })
         });
     </script>
 </body>
