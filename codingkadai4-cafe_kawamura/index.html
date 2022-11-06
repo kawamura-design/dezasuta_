@@ -118,14 +118,12 @@
                 <img src="images/gallery@2x.png" alt="GALLERY">
             </h2>
             <ul>
-                <li><img class="pcimg" src="images/pc_gallary_05-100.jpg" alt="店内"></li>
-                <li><img class="pcimg" src="images/pc_gallary_04-100.jpg" alt="コーヒー豆"></li>
-                <li><img class="pcimg" src="images/pc_gallary_03-100.jpg" alt="店内2"></li>
-                <li><img class="pcimg" src="images/pc_gallary_02-100.jpg" alt="CAFE"></li>
-                <li><img class="pcimg" src="images/pc_gallary_01-100.jpg" alt="コーヒー"></li>
-                <li><img class="pcimg" src="images/pc_gallary_05-100.jpg" alt="店内"></li>
-                <li><img class="spimg" src="images/mobile_gallery-100.jpg" alt="店内2">
-                </li>
+                <li><img src="images/pc_gallary_05-100.jpg" alt="店内"></li>
+                <li><img src="images/pc_gallary_04-100.jpg" alt="コーヒー豆"></li>
+                <li><img src="images/pc_gallary_03-100.jpg" alt="店内2"></li>
+                <li><img src="images/pc_gallary_02-100.jpg" alt="CAFE"></li>
+                <li><img src="images/pc_gallary_01-100.jpg" alt="コーヒー"></li>
+                <li><img src="images/pc_gallary_05-100.jpg" alt="店内"></li>
             </ul>
         </section>
 
@@ -190,12 +188,16 @@
                 arrows: false,
             });
             $('.gallery ul').slick({
-                arrows: true,
-                // これなくても矢印出るのはなぜか。
                 speed: 1000,
                 slidesToScroll: 1,
-                variableWidth: true,
-            })
+                slidesToShow: 5,
+                responsive: [{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }],
+            });
         });
     </script>
 </body>
