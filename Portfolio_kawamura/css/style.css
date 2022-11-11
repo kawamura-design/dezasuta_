@@ -8,6 +8,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 dl,
 dt,
@@ -47,9 +48,31 @@ img {
     border: none;
 }
 
-/* ヘッダー */
+/* 共通の記載 */
+h2 {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding: 80px 0 0;
+}
+
+h3 {
+    font-size: 16px;
+    /* font-weight: 300; */
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin: 17px auto 60px;
+}
+
+span {
+    color: #fad2c3;
+    font-weight: 700;
+}
+
+/* ヘッダー・ナビゲーション*/
 header {
-    width: 1000px;
+    max-width: 1000px;
     padding: 24px;
     margin: 0 auto;
     display: flex;
@@ -57,7 +80,7 @@ header {
     align-items: center;
 }
 
-header h1 {
+.header_logo {
     width: 113px;
 }
 
@@ -90,6 +113,11 @@ header h1 {
 
 /* メイン */
 /* ファーストビュー */
+.lead {
+    position: relative;
+}
+/* ★ここよくわからないから調べる relativeとabsoluteの違い */
+
 .lead h1 {
     position: absolute;
     top: 43.4%;
@@ -99,29 +127,9 @@ header h1 {
 
 /* サービス */
 .service {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
-}
-
-span {
-    color: #fad2c3;
-    font-weight: 700;
-}
-
-.service h2 {
-    font-size: 36px;
-    font-weight: 300;
-    margin: 80px auto 0;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-.service h3 {
-    font-size: 16px;
-    /* font-weight: 300; */
-    margin: 17px auto 60px;
-    text-align: center;
-    letter-spacing: 0.1em;
+    padding: 0 10px;
 }
 
 .service_block {
@@ -129,17 +137,23 @@ span {
     justify-content: space-between;
 }
 
-.service_block h4 {
+.service_content {
+    width: 29%;
+}
+/* ★なぜp以外が29%にならないかわからない */
+
+h4 {
     font-size: 23px;
     font-weight: 700;
-    letter-spacing: 0.05em;
     text-align: center;
+    letter-spacing: 0.05em;
     margin: 30px 0 20px;
 }
 
 .service_block p {
-    width: 290px;
+    /* width: 290px; */
     line-height: 1.625;
+    text-align: justify;
 }
 
 .graphic {
@@ -161,29 +175,13 @@ span {
 /* ワークス */
 .works {
     background-color: #ece4e1;
-    padding-bottom: 0.1px;
-}
-
-.works h2 {
-    font-size: 36px;
-    font-weight: 300;
     margin: 100px auto 0;
-    padding: 80px 0 0;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-.works h3 {
-    font-size: 16px;
-    /* font-weight: 300; */
-    margin: 17px auto 60px;
-    text-align: center;
-    letter-spacing: 0.1em;
 }
 
 .works ul {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -195,7 +193,8 @@ span {
 
 .works_btn {
     width: 250px;
-    margin: 8px auto 80px;
+    padding: 7px 0 80px;
+    margin: 0 auto;
 }
 
 .works_btn a {
@@ -211,82 +210,118 @@ span {
 
 /* アバウト */
 .about {
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
-.about h2 {
-    font-size: 36px;
-    font-weight: 300;
-    margin: 0 auto;
-    padding: 80px 0 0;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-.about h3 {
-    font-size: 16px;
-    /* font-weight: 300; */
-    margin: 17px auto 60px;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-.self p {
+.self {
     width: 480px;
-    letter-spacing: 0.1em;
+    padding: 50px 160px 80px;
     margin: 0 auto;
-    padding: 50px 160px;
     background-color: #ece4e1;
+}
+.self p {
+    line-height: 1.75;
+}
+
+.bottom_space {
+    margin-bottom: 30px;
 }
 
 .illust {
+    position: relative;
     width: 250px;
+}
+.illust img {
+    position: absolute;
+    top: -100px;
+}
+
+/* .skill {
+} */
+
+h5 {
+    font-size: 24px;
 }
 
 /* コンタクト */
 .contact {
-    /* width: 1000px;
-    margin: 0 auto; */
-    text-align: center;
+    margin: 100px auto 0;
     background: linear-gradient(to bottom, #fff, #ece4e1);
-}
-
-.contact h2 {
-    font-size: 36px;
-    font-weight: 300;
-    margin: 0 auto;
-    padding: 80px 0 0;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-.contact h3 {
-    font-size: 16px;
-    /* font-weight: 300; */
-    margin: 17px auto 60px;
-    text-align: center;
-    letter-spacing: 0.1em;
 }
 
 .contact_top {
     font-size: 17px;
+    text-align: center;
     margin-bottom: 30px;
+}
+
+.contact_text {
+    line-height: 1.75;
+    text-align: center;
+}
+.contact ul {
+    width: 450px;
+    margin: 40px auto 60px;
+    list-style: square;
+}
+
+.contact ul li {
+    padding: 7px 0;
 }
 
 .contact_btn {
     width: 250px;
     margin: 30px auto 0;
 }
-.contact_btn a {
-    display: block;
+
+form {
+    /* max-width: 1000px; */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+label {
+    width: 600px;
+    margin: 0 auto;
+}
+
+input {
+    width: 600px;
+    height: 30px;
+    margin: 15px auto 30px;
+    /* border: 1px solid #6f5d46; */
+    border: none;
+    background-color: #fff;
+}
+
+textarea {
+    width: 600px;
+    height: 300px;
+    margin: 15px auto 30px;
+    /* border: 1px solid #6f5d46; */
+    border: none;
+}
+
+button {
+    width: 250px;
+    margin: 0 auto;
+    padding: 17px 0;
     font-size: 15px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #6f5d46;
     letter-spacing: 0.1em;
     box-sizing: border-box;
     border: 1px solid #6f5d46;
     background: #fad2c3;
-    padding: 17px 0;
     text-align: center;
+}
+form a {
+    padding: 17px 0;
 }
 
 /* フッター */
