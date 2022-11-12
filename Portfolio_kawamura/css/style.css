@@ -70,6 +70,11 @@ span {
     font-weight: 700;
 }
 
+a:hover {
+    /* マウスをホバーしたときに透過させる */
+    opacity: 0.5;
+}
+
 /* ヘッダー・ナビゲーション*/
 header {
     max-width: 1000px;
@@ -78,15 +83,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
 }
 
 .header_logo {
     width: 113px;
+    /* position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0; */
 }
 
 .pc_nav {
     display: flex;
     align-items: center;
+    /* position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0; */
 }
 
 .pc_nav > ul {
@@ -111,12 +125,27 @@ header {
     padding-right: 0;
 }
 
+.sp_nav,
+.sp_btn {
+    display: none;
+}
+/* スマホ版メニューを消す */
+
+@media screen and (max-width: 700px) {
+    .pc_nav {
+        display: none;
+    }
+}
+
 /* メイン */
+/* body {
+    padding-top: 80px;
+} */
+
 /* ファーストビュー */
 .lead {
     position: relative;
 }
-/* ★ここよくわからないから調べる relativeとabsoluteの違い */
 
 .lead h1 {
     position: absolute;
