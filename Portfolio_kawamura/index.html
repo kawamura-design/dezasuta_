@@ -24,7 +24,7 @@
         <nav class="pc_nav">
             <ul>
                 <li><a href="#service">Service</a></li>
-                <li><a href="works/index.html" target="_blank">Works</a></li>
+                <li><a href="works/index.html">Works</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="index.html" target="_blank">Blog</a>
@@ -44,11 +44,11 @@
         <nav class="sp_nav">
             <ul>
                 <li><a href="#header">Top</a></li>
-                <li><a href="#Service">Service</a></li>
-                <li><a href="works/index.html" target="_blank">Works</a>
+                <li><a href="#service">Service</a></li>
+                <li><a href="works/index.html">Works</a>
                 </li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="index.html" target="_blank">Blog</a>
                 </li>
             </ul>
@@ -64,12 +64,20 @@
     </header>
 
     <main>
-        <div class="lead">
+        <div class="pc_lead">
             <h1>
                 <img src="images/web&graphicdesign.png" alt="Web & Graphic design">
             </h1>
             <picture>
                 <img src="images/firstview.png" alt="">
+            </picture>
+        </div>
+        <div class="sp_lead">
+            <h1>
+                <img src="images/web&graphicdesign_sp.png" alt="Web & Graphic design">
+            </h1>
+            <picture>
+                <img src="images/firstview_sp.jpg" alt="">
             </picture>
         </div>
 
@@ -103,24 +111,23 @@
         </section>
 
         <section id="works" class="works">
-            <h2><span>W</span>orks</h2>
+            <h2><span class="works_w">W</span>orks</h2>
             <h3>制作したもの</h3>
             <ul>
-                <li><a href="works/works_banner1.html" target="_blank"><img src="images/banner1.png" alt="バナー1"></a>
+                <li><a href="works/works_banner1.html"><img src="images/banner1.png" alt="バナー1"></a>
                 </li>
-                <li><a href="works/works_peoplegood.html" target="_blank"><img src="images/peoplegoodmock.png"
-                            alt="peoplegood"></a></li>
-                <li><a href="works/works_banner2.html" target="_blank"><img src="images/banner2.png" alt="banner2"></a>
+                <li><a href="works/works_peoplegood.html"><img src="images/peoplegoodmock.png" alt="peoplegood"></a>
                 </li>
-                <li><a href="works/works_hairsalonhp.html" target="_blank"><img src="images/hairsalonmock.png"
-                            alt="ヘアサロンHP"></a></li>
-                <li><a href="works/works_banner3.html" target="_blank"><img src="images/banner3.png" alt="banner3"></a>
+                <li><a href="works/works_banner2.html"><img src="images/banner2.png" alt="banner2"></a>
                 </li>
-                <li><a href="works/works_designcafe.html" target="_blank"><img src="images/designcafemock.png"
-                            alt="designcafe"></a></li>
+                <li><a href="works/works_hairsalonhp.html"><img src="images/hairsalonmock.png" alt="ヘアサロンHP"></a></li>
+                <li><a href="works/works_banner3.html"><img src="images/banner3.png" alt="banner3"></a>
+                </li>
+                <li><a href="works/works_designcafe.html"><img src="images/designcafemock.png" alt="designcafe"></a>
+                </li>
             </ul>
             <div class="works_btn">
-                <a href="works/index.html" target="_blank">一覧を見る</a>
+                <a href="works/index.html">一覧を見る</a>
             </div>
         </section>
 
@@ -131,9 +138,8 @@
                 <p class="bottom_space">ご覧いただきありがとうございます。<br>
                     大阪府在住のデザイナーです。
                 </p>
-                <p class="bottom_space"> 一つ一つのお仕事を丁寧に、ご依頼いただいた方とのご縁を大切に<br>
-                    活動しています。これからも様々なことを吸収する姿勢を怠らず、<br>
-                    日々成長を続けていけるデザイナーでいたいと思っています。
+                <p class="bottom_space">
+                    一つ一つのお仕事を丁寧に、ご依頼いただいた方とのご縁を大切に活動しています。これからも様々なことを吸収する姿勢を怠らず、日々成長を続けていけるデザイナーでいたいと思っています。
                 </p>
                 <p class="bottom_space">何かお困りのことがありましたら、お気軽にご相談ください。<br>
                     依頼者様のご要望に合わせたデザインをご提案いたします。
@@ -179,8 +185,30 @@
     </main>
 
     <footer>
+        <div class="footer_snsicon">
+            <ul>
+                <li><a href="https://twitter.com/home?lang=ja" target="_blank"><img src="images/twittericon.png"
+                            alt="twitterアイコン"></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><img src="images/instagramicon.png"
+                            alt="instaアイコン"></a></li>
+            </ul>
+        </div>
         <p><small>@ Rena design</small></p>
     </footer>
+
+    <script>$(function () {
+            $('.works ul').slick({
+                speed: 1000,
+                slidesToScroll: 1,
+                slidesToShow: 6,
+                responsive: [{
+                    breakpoint: 700,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }],
+            });
+        })</script>
 
 </body>
 

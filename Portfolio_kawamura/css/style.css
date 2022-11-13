@@ -132,6 +132,9 @@ header {
 /* スマホ版メニューを消す */
 
 @media screen and (max-width: 700px) {
+    header {
+        background-color: #ece4e1;
+    }
     .pc_nav {
         display: none;
     }
@@ -143,15 +146,38 @@ header {
 } */
 
 /* ファーストビュー */
-.lead {
+.pc_lead {
     position: relative;
 }
 
-.lead h1 {
+.pc_lead h1 {
     position: absolute;
     top: 43.4%;
     left: 183px;
     width: 41.4%;
+}
+
+@media screen and (min-width: 700px) {
+    .sp_lead {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .pc_lead {
+        display: none;
+    }
+
+    .sp_lead {
+        position: relative;
+    }
+
+    .sp_lead h1 {
+        position: absolute;
+        top: 41%;
+        left: 16%;
+        width: 66.7%;
+    }
 }
 
 /* サービス */
@@ -201,10 +227,31 @@ h4 {
     margin: 0 auto;
 }
 
+@media screen and (max-width: 700px) {
+    .service {
+        max-width: 340px;
+    }
+    .service_block {
+        display: block;
+    }
+    .service_content {
+        width: 100%;
+    }
+    .service_block p {
+        width: 290px;
+        margin: 0 auto;
+        padding-bottom: 60px;
+    }
+}
+
 /* ワークス */
 .works {
     background-color: #ece4e1;
     margin: 100px auto 0;
+}
+
+.works_w {
+    color: #f9c0af;
 }
 
 .works ul {
@@ -237,6 +284,27 @@ h4 {
     text-align: center;
 }
 
+@media screen and (max-width: 1020px) {
+    .works ul {
+        padding: 0 23px;
+    }
+    .works ul li {
+        width: calc(50% - 10px);
+    }
+}
+@media screen and (max-width: 700px) {
+    .works {
+        margin-top: 40px;
+    }
+    /* .works ul {
+        display: block;
+    } */
+    .works ul li {
+        width: 318px;
+        margin: 0 auto 30px;
+    }
+}
+
 /* アバウト */
 .about {
     max-width: 1000px;
@@ -246,13 +314,14 @@ h4 {
 }
 
 .self {
-    width: 480px;
+    max-width: 480px;
     padding: 50px 160px 100px;
     margin: 0 auto;
     background-color: #ece4e1;
 }
 .self p {
     line-height: 1.75;
+    text-align: justify;
 }
 
 .bottom_space {
@@ -267,10 +336,11 @@ h4 {
 }
 
 .skill {
-    position: absolute;
-    top: 530px;
-    right: 0;
+    width: 160px;
     padding: 40px 120px;
+    position: absolute;
+    top: 545px;
+    right: 0;
     border-radius: 40px;
     background: rgba(250, 210, 195, 0.7);
 }
@@ -279,11 +349,56 @@ h5 {
     font-size: 24px;
     text-align: center;
     letter-spacing: 0.1em;
-    padding-bottom: 30px;
+    padding-bottom: 12px;
 }
 
 .skill p {
     line-height: 1.75;
+}
+
+@media screen and (max-width: 1020px) {
+    .self {
+        padding: 50px 80px 120px;
+    }
+    .illust {
+        width: 200px;
+        top: 100px;
+        right: 50px;
+        left: auto;
+    }
+    .skill {
+        position: initial;
+        margin: -100px auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .self {
+        max-width: 300px;
+        padding: 135px 20px 40px;
+        margin-top: 145px;
+        /* padding: 115px 20px 100px;
+        margin-top: 150px; */
+    }
+    .illust {
+        width: 170px;
+        top: 209px;
+        left: 50%;
+        transform: translate(-50%);
+        /* position: initial;
+        position: absolute;
+        top: 200px;
+        left: 25%; */
+    }
+    .skill {
+        width: 280px;
+        padding: 25px 30px;
+        margin: 30px auto 0;
+    }
+    .skill p {
+        width: 160px;
+        margin: 0 auto;
+    }
 }
 
 /* コンタクト */
@@ -317,6 +432,32 @@ h5 {
     margin: 30px auto 0;
 }
 
+@media screen and (max-width: 700px) {
+    .contact {
+        padding: 0 17.5px;
+        margin: 100px auto 0;
+    }
+    .contact_top {
+        line-height: 1.75;
+    }
+    .contact_text {
+        line-height: 1.75;
+        text-align: justify;
+    }
+    .contact_text br {
+        display: none;
+    }
+    .contact ul {
+        max-width: 340px;
+        margin: 40px 17.5px 60px;
+    }
+    .contact ul li {
+        width: 340px;
+        line-height: 1.5;
+    }
+}
+
+/* フォーム */
 form {
     /* max-width: 1000px; */
     display: flex;
@@ -331,19 +472,24 @@ label {
 
 input {
     width: 600px;
-    height: 30px;
+    /* height: 30px; */
+    padding: 10px;
     margin: 15px auto 30px;
     /* border: 1px solid #6f5d46; */
     border: none;
     background-color: #fff;
+    box-sizing: border-box;
+    line-height: 30px;
 }
 
 textarea {
     width: 600px;
     height: 300px;
+    padding: 10px;
     margin: 15px auto 30px;
     /* border: 1px solid #6f5d46; */
     border: none;
+    box-sizing: border-box;
 }
 
 button {
@@ -365,6 +511,14 @@ form a {
     padding: 17px 0;
 }
 
+@media screen and (max-width: 700px) {
+    label,
+    input,
+    textarea {
+        width: 340px;
+    }
+}
+
 /* フッター */
 footer {
     background-color: #ece4e1;
@@ -373,4 +527,22 @@ footer {
 }
 small {
     font-size: 12px;
+}
+
+@media screen and (min-width: 700px) {
+    .footer_snsicon {
+        display: none;
+    }
+}
+@media screen and (max-width: 700px) {
+    .footer_snsicon ul {
+        display: flex;
+        align-items: center;
+        padding: 0 120px;
+        margin-bottom: 15px;
+    }
+    .footer_snsicon ul li {
+        width: 26px;
+        margin: 0 auto;
+    }
 }
