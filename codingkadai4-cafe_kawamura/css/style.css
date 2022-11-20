@@ -169,6 +169,7 @@ body {
         background: rgba(0, 0, 0, 0.8);
         z-index: 1;
     }
+
     .sp_nav ul {
         display: flex;
         flex-direction: column;

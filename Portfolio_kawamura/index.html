@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
         <div class="sp_btn"><span></span></div>
         <nav class="sp_nav">
             <ul>
-                <li><a href="#header">Top</a></li>
+                <li><a href="index.html">Top</a></li>
                 <li><a href="#service">Service</a></li>
                 <li><a href="works/index.html">Works</a>
                 </li>
@@ -196,19 +196,26 @@
         <p><small>@ Rena design</small></p>
     </footer>
 
-    <script>$(function () {
+    <script>
+        $(function () {
+            $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_nav').toggleClass('is-show');
+                $('.sp_btn').toggleClass('open')
+            });
+
             $('.works ul').slick({
                 speed: 1000,
                 slidesToScroll: 1,
                 slidesToShow: 6,
                 responsive: [{
-                    breakpoint: 700,
+                    breakpoint: 767,
                     settings: {
                         slidesToShow: 1,
                     }
                 }],
             });
-        })</script>
+        });
+    </script>
 
 </body>
 
