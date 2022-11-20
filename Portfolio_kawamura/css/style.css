@@ -65,7 +65,9 @@ h3 {
     margin: 17px auto 60px;
 }
 
-.works_w {
+.service_s,
+.about_a,
+.contact_c {
     color: #fad2c3;
     font-weight: 700;
 }
@@ -353,6 +355,7 @@ h4 {
 
 .works_w {
     color: #f9c0af;
+    font-weight: 700;
 }
 
 .works ul {
@@ -647,4 +650,14 @@ small {
         width: 26px;
         padding: 0 20px;
     }
+}
+
+.fade-in {
+    opacity: 0;
+    transition-duration: 500ms;
+    transition-property: opacity, transform;
+}
+
+.fade-in-up {
+    transform: translate(0, 50px);
 }

@@ -82,7 +82,7 @@
         </div>
 
         <section id="service" class="service">
-            <h2><span>S</span>ervice</h2>
+            <h2><span class="service_s">S</span>ervice</h2>
             <h3>できること</h3>
             <div class="service_block">
                 <div class="service_content">
@@ -132,7 +132,7 @@
         </section>
 
         <section id="about" class="about">
-            <h2><span>A</span>bout</h2>
+            <h2><span class="about_a">A</span>bout</h2>
             <h3>わたしのこと</h3>
             <div class="self">
                 <p class="bottom_space">ご覧いただきありがとうございます。<br>
@@ -157,7 +157,7 @@
         </section>
 
         <section id="contact" class="contact">
-            <h2><span>C</span>ontact</h2>
+            <h2><span class="contact_c">C</span>ontact</h2>
             <h3>お問い合わせ</h3>
             <p class="contact_top">お仕事のご相談やご依頼など、こちらからお気軽にお問合せください。</p>
             <p class="contact_text">デザイン制作をご相談の方は、わかる範囲で下記内容についても<br>
@@ -215,6 +215,21 @@
                 }],
             });
         });
+
+        jQuery(function ($) {
+            var fadeIn = $('.fade-in');
+            $(window).scroll(function () {
+                $(fadeIn).each(function () {
+                    var offset = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > offset - windowHeight + 150) {
+                        $(this).addClass("scroll-in");
+                    }
+                });
+            });
+        });
+
     </script>
 
 </body>

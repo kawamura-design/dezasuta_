@@ -65,11 +65,6 @@ h2 {
     margin: 17px auto 60px;
 }
 
-.works_w {
-    color: #fad2c3;
-    font-weight: 700;
-}
-
 a:hover {
     /* マウスをホバーしたときに透過させる */
     opacity: 0.5;
@@ -258,6 +253,11 @@ main {
     background-color: #fff;
 }
 
+.works_w {
+    color: #fad2c3;
+    font-weight: 700;
+}
+
 .works_img {
     width: 440px;
     margin: 0 auto;
@@ -391,6 +391,11 @@ h4 {
 }
 
 /* コンタクト */
+.contact_c {
+    color: #f9c0af;
+    font-weight: 700;
+}
+
 .contact_top {
     font-size: 17px;
     text-align: center;
