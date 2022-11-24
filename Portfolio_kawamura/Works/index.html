@@ -11,8 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <!-- slickのCSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <!-- リセットのCSS -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/style-works.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <!-- slickのJavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -65,9 +74,9 @@
 
     <main>
         <section id="works" class="works">
-            <h1><span class="works_w">W</span>orks</h1>
-            <h2>制作したもの</h2>
-            <h3>Web design</h3>
+            <h1 class="heading_main"><span class="works_w">W</span>orks</h1>
+            <h2 class="heading_sub">制作したもの</h2>
+            <h3 class="subtitle">Web design</h3>
             <ul>
                 <li><a href="works_banner1.html"><img src="../images/banner1.png" alt="バナー1"></a>
                 </li>
@@ -85,8 +94,8 @@
         </section>
 
         <section id="contact" class="contact">
-            <h1><span class="contact_c">C</span>ontact</h1>
-            <h2>お問い合わせ</h2>
+            <h2 class="heading_main"><span class="contact_c">C</span>ontact</h2>
+            <h3 class="heading_sub">お問い合わせ</h3>
             <p class="contact_top">お仕事のご相談やご依頼など、こちらからお気軽にお問合せください。</p>
             <div class="contact_btn">
                 <a href="../index.html#contact">お問い合わせはこちら</a>
@@ -104,12 +113,13 @@
                             alt="instaアイコン"></a></li>
             </ul>
         </div>
-        <p><small>@ Rena design</small></p>
+        <p><small>© Rena design</small></p>
     </footer>
 
     <script>
         $(function () {
             $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_backdrop').fadeToggle();
                 $('.sp_nav').toggleClass('is-show');
                 $('.sp_btn').toggleClass('open')
             });

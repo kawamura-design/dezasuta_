@@ -11,8 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <!-- slickのCSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <!-- リセットのCSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <!-- slickのJavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -41,6 +50,7 @@
         </nav>
 
         <div class="sp_btn"><span></span></div>
+        <nav class="sp_backdrop"></nav>
         <nav class="sp_nav">
             <ul>
                 <li><a href="index.html">Top</a></li>
@@ -84,7 +94,7 @@
         <section id="service" class="service">
             <h2><span class="service_s">S</span>ervice</h2>
             <h3>できること</h3>
-            <div class="service_block">
+            <div class="service_block fade-in fade-in-up">
                 <div class="service_content">
                     <div class="graphic">
                         <img src="images/graphicdesignillust.png" alt="Graphic Designイラスト">
@@ -113,7 +123,7 @@
         <section id="works" class="works">
             <h2><span class="works_w">W</span>orks</h2>
             <h3>制作したもの</h3>
-            <ul>
+            <ul class="fade-in fade-in-up">
                 <li><a href="works/works_banner1.html"><img src="images/banner1.png" alt="バナー1"></a>
                 </li>
                 <li><a href="works/works_peoplegood.html"><img src="images/peoplegoodmock.png" alt="peoplegood"></a>
@@ -134,7 +144,7 @@
         <section id="about" class="about">
             <h2><span class="about_a">A</span>bout</h2>
             <h3>わたしのこと</h3>
-            <div class="self">
+            <div class="self fade-in fade-in-up">
                 <p class="bottom_space">ご覧いただきありがとうございます。<br>
                     大阪府在住のデザイナーです。
                 </p>
@@ -145,10 +155,10 @@
                     依頼者様のご要望に合わせたデザインをご提案いたします。
                 </p>
             </div>
-            <div class="illust">
+            <div class="illust fade-in fade-in-up">
                 <img src="images/nigaoeillust.png" alt="似顔絵イラスト">
             </div>
-            <div class="skill">
+            <div class="skill fade-in fade-in-up">
                 <h5>Skill</h5>
                 <p>Photoshop・illustrator<br>
                     HTML・CSS・jQuery<br>
@@ -176,11 +186,9 @@
                 <input id="email" type="text" name="entry.772846287" placeholder="">
                 <label for="msg">お問い合わせ内容（必須）</label>
                 <textarea id="msg" name="entry.641382363" placeholder=""></textarea>
-                <button type="submit" name="button" value="送信">問い合わせを送信する</button>
+                <button type="submit" name="button" value="送信">送信する</button>
             </form>
-            <!-- <div class="contact_btn">
-                <a href="">問い合わせを送信する</a>
-            </div> -->
+
         </section>
     </main>
 
@@ -193,27 +201,36 @@
                             alt="instaアイコン"></a></li>
             </ul>
         </div>
-        <p><small>@ Rena design</small></p>
+        <p><small>© Rena design</small></p>
     </footer>
 
     <script>
         $(function () {
             $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_backdrop').fadeToggle();
                 $('.sp_nav').toggleClass('is-show');
                 $('.sp_btn').toggleClass('open')
             });
 
-            $('.works ul').slick({
-                speed: 1000,
-                slidesToScroll: 1,
-                slidesToShow: 6,
-                responsive: [{
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }],
+            $(window).on('load resize', function () {
+                var w = $(window).width();
+                var x = 768;
+                if (w < x) {
+                    //画面サイズが768px未満のときの処理
+                    $('.works ul').slick({
+                        speed: 1000,
+                        slidesToScroll: 1,
+                        slidesToShow: 6,
+                        responsive: [{
+                            breakpoint: 767,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        }],
+                    });
+                }
             });
+
         });
 
         jQuery(function ($) {
