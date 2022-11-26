@@ -24,11 +24,6 @@ h3 {
     font-weight: 700;
 }
 
-a:hover {
-    /* マウスをホバーしたときに透過させる */
-    opacity: 0.5;
-}
-
 body {
     background-color: #fff;
 }
@@ -423,5 +418,43 @@ form a {
     input,
     textarea {
         width: 340px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .slick-slide img {
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .slick-dots {
+        display: none;
+    }
+
+    .slick-arrow {
+        z-index: 1000;
+    }
+
+    .slick-next {
+        right: 13%;
+        width: 20px;
+        height: 20px;
+        border-top: 2px solid #6f5d46;
+        border-right: 2px solid #6f5d46;
+        transform: translate(50%, -100%) rotate(45deg);
+    }
+
+    .slick-prev {
+        left: 13%;
+        width: 20px;
+        height: 20px;
+        border-top: 2px solid #6f5d46;
+        border-left: 2px solid #6f5d46;
+        transform: translate(-50%, -100%) rotate(-45deg);
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        display: none;
     }
 }

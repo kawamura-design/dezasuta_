@@ -275,6 +275,7 @@ small {
     }
 }
 
+/* スクロールして表示させる */
 .fade-in {
     opacity: 0;
     transition-duration: 2000ms;
@@ -288,4 +289,22 @@ small {
 .scroll-in {
     opacity: 1;
     transform: translate(0, 0);
+}
+
+/* ふわっとその場で表示させる */
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

@@ -11,10 +11,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <!-- slickのCSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <!-- リセットのCSS -->
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/style-works_designcafe.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <!-- slickのJavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -29,8 +36,8 @@
                 <li><a href="index.html">Works</a></li>
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
-                <li><a href="../index.html" target="_blank">Blog</a>
-                </li>
+                <!-- <li><a href="../index.html" target="_blank">Blog</a>
+                </li> -->
             </ul>
             <div class="snsicon">
                 <ul>
@@ -43,6 +50,7 @@
         </nav>
 
         <div class="sp_btn"><span></span></div>
+        <nav class="sp_backdrop"></nav>
         <nav class="sp_nav">
             <ul>
                 <li><a href="../index.html#header">Top</a></li>
@@ -51,8 +59,8 @@
                 </li>
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
-                <li><a href="../index.html" target="_blank">Blog</a>
-                </li>
+                <!-- <li><a href="../index.html" target="_blank">Blog</a>
+                </li> -->
             </ul>
             <div class="sp_snsicon">
                 <ul>
@@ -69,10 +77,10 @@
         <section id="works" class="works">
             <h1 class="heading_main"><span class="works_w">W</span>orks</h1>
             <h2 class="heading_sub">制作したもの</h2>
-            <div class="works_img"><img src="../images/designcafemock.jpg" alt="DESIGN CAFEのホームページ"></div>
-            <h3 class="workstitle">DESIGN CAFEのホームページ</h3>
+            <div class="works_img box fadeIn"><img src="../images/designcafemock.jpg" alt="DESIGN CAFEのホームページ"></div>
+            <h3 class="workstitle box fadeIn">DESIGN CAFEのホームページ</h3>
             <div class="works_content">
-                <div class="outline">
+                <div class="outline fade-in fade-in-up">
                     <h4>概要</h4>
                     <ul>
                         <li>カテゴリ<span class="category">ホームページ</span></li>
@@ -81,7 +89,7 @@
                         <li>使用ツール<span class="tool">illustrator / VScode</span></li>
                     </ul>
                 </div>
-                <div class="point">
+                <div class="point fade-in fade-in-up">
                     <h4>制作のポイント</h4>
                     <p class="point_text">
                         架空サイトのコーディングを模写しました。<br>illustratorのデータから値を読み取り、忠実に再現することを心がけました。
@@ -89,12 +97,17 @@
                 </div>
             </div>
             <div class="capture">
-                <h4>キャプチャー</h4>
-                <div class="capture_pcimg"><img src="../images/designcafe.jpg" alt="DESIGN CAFEのPCキャプチャー"></div>
+                <h4 class="fade-in fade-in-up">キャプチャー</h4>
+                <div class="capture_pcimg fade-in fade-in-up"><img src="../images/designcafe.jpg"
+                        alt="DESIGN CAFEのPCキャプチャー">
+                </div>
                 <div class="capture_spimg">
-                    <div class="capturepcimg"><img src="../images/designpc_sp.jpg" alt="DESIGN CAFEのPCキャプチャー">
+                    <div class="capturepcimg fade-in fade-in-up"><img src="../images/designpc_sp.jpg"
+                            alt="DESIGN CAFEのPCキャプチャー">
                     </div>
-                    <div class="capturespimg"></div><img src="../images/designcafesp_sp.jpg" alt="DESIGN CAFEのspキャプチャー">
+                    <div class="capturespimg fade-in fade-in-up"><img src="../images/designcafesp_sp.jpg"
+                            alt="DESIGN CAFEのspキャプチャー">
+                    </div>
                 </div>
                 <div class="works_btn">
                     <a href="index.html">一覧を見る</a>
@@ -128,10 +141,26 @@
     <script>
         $(function () {
             $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_backdrop').fadeToggle();
                 $('.sp_nav').toggleClass('is-show');
                 $('.sp_btn').toggleClass('open')
             });
         });
+
+        jQuery(function ($) {
+            var fadeIn = $('.fade-in');
+            $(window).scroll(function () {
+                $(fadeIn).each(function () {
+                    var offset = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > offset - windowHeight + 150) {
+                        $(this).addClass("scroll-in");
+                    }
+                });
+            });
+        });
+
     </script>
 
 </body>
