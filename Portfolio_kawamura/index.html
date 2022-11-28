@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rena design</title>
     <meta name="description" content="大阪府在住のWebデザイナーのポートフォリオサイトです。">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;700&display=swap"
@@ -216,18 +219,20 @@
                 var w = $(window).width();
                 var x = 768;
                 if (w < x) {
-                    //画面サイズが768px未満のときの処理
-                    $('.works ul').slick({
+                    $('.works ul').not('.slick-initialized').slick({
                         speed: 1000,
-                        slidesToScroll: 1,
-                        slidesToShow: 6,
-                        responsive: [{
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 1,
-                            }
-                        }],
+                        // slidesToScroll: 1,
+                        // slidesToShow: 1,
+                        // ↓画面サイズが768px未満のときの処理はPCとSPの設定が違う時のみ設定する
+                        // responsive: [{
+                        //     breakpoint: 767,
+                        //     settings: {
+                        //         slidesToShow: 1,
+                        //     }
+                        // }],
                     });
+                } else {
+                    $('.works ul.slick-initialized').slick('unslick');
                 }
             });
 

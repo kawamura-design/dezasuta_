@@ -79,6 +79,9 @@ header {
     .sp_nav {
         display: none;
     }
+    .sp_backdrop {
+        display: none;
+    }
 }
 
 /* 幅767以下でPC版メニューを消す */
